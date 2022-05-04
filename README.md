@@ -3,16 +3,16 @@
 - [@jessikaaguiar](https://github.com/JessikaAguiar)
 
 ## Itens avalidos:
-- [ ] Implementar um aplicativo web de gerenciamento de dispositivos
+- [x] Implementar um aplicativo web de gerenciamento de dispositivos
   simples
-- [ ] Criação do repositório no GitHub (único para back-end e front-end)
-- [ ] Criação de uma REST API em Node.js (versão 10 ou superior)
+- [x] Criação do repositório no GitHub (único para back-end e front-end)
+- [x] Criação de uma REST API em Node.js (versão 10 ou superior)
   - Estrutura inicial
   - Conexão com o banco de dados
   - Modelagem das entidades
-- [ ] Criação da estrutura de banco de dados
+- [x] Criação da estrutura de banco de dados
   - Utilizar o MySQL
-- [ ] Modelagem das seguintes entidades
+- [x] Modelagem das seguintes entidades
   - Todos os campos são obrigatórios
     - Device:
       - Id: (gerado automaticamente. Inteiro e incremental)
@@ -25,19 +25,19 @@
       - Id: (gerado automaticamente, inteiro e incremental)
       - Name: Não deve estar vazio. Todas as categorias devem ter um
         nome. Tamanho máximo 128 caracteres.
-- [ ] Você deve fornecer o script (SQL ou qualquer script de migração/versão de
+- [x] Você deve fornecer o script (SQL ou qualquer script de migração/versão de
   banco de dados) que pode criar o banco de dados do zero.
-- [ ] Use o GIT, confirme cada progresso que você fez e compartilhe seu código
+- [x] Use o GIT, confirme cada progresso que você fez e compartilhe seu código
   em um repositório público do github.
-- [ ] Criação dos endpoints para criar, ler e excluir
-- [ ] Para cada entidade
-- [ ] Utilizando TDD
-- [ ] Utilizando padrões de projeto (utilizar pelo menos um padrão
+- [x] Criação dos endpoints para criar, ler e excluir
+  - Para cada entidade
+  - [ ] Utilizando TDD
+- [x] Utilizando padrões de projeto (utilizar pelo menos um padrão
   comportamental)
-- [ ] Criação da autenticação via API
-- [ ] Criação de uma aplicativo web com Angular 8 ou superior
-- [ ] Criação da página de login
-- [ ] O aplicativo web deve ter um menu com duas opções:
+- [x] Criação da autenticação via API
+- [x] Criação de uma aplicativo web com Angular 8 ou superior
+- [x] Criação da página de login
+- [x] O aplicativo web deve ter um menu com duas opções:
   - Gerenciamento de Categoria
   - Dispositivo Gestão
 - [ ] Implante seu projeto em um provedor de nuvem (AWS, GCP, Heroku ou
@@ -50,7 +50,7 @@
   - O front-end pode ser implantado no bucket estático do S3 ou na
     mesma instância do EC2 usada para o back-end (para evitar custos
     adicionais).
-- [ ] Caso o projeto não possa ser implantado, ele deve estar pronto para ser
+- [x] Caso o projeto não possa ser implantado, ele deve estar pronto para ser
   executado e instalado em uma máquina Linux Ubuntu 18. O processo de
   avaliação seria:
   - Clone o repositório. (crie o banco de dados local com base no script
