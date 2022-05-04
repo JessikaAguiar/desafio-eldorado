@@ -11,13 +11,13 @@ import { DeviceService } from 'src/app/services/device.service';
   styleUrls: ['./dashboard-views.component.css']
 })
 export class DashboardViewsComponent implements OnInit {
-
-
-
   devicesList: Device[] = [];
   categoriesList: Category[] = [];
   totalCategories: number = 0;
   totalDevices: number = 0;
+  totalMotoBords: number = 0;
+  totalXiamilhy: number = 0;
+  totalOther: number = 0;
 
   constructor(
     private devicesService: DeviceService,
@@ -43,6 +43,12 @@ export class DashboardViewsComponent implements OnInit {
       this.devicesList = response.content
       if(this.devicesList.length > 0){
         this.totalDevices = this.devicesList.length
+        let qtdMotoBords = this.devicesList.filter((device) => device.category.name === 'motobords')
+        this.totalMotoBords = qtdMotoBords.length
+        let qtdXiamilhy = this.devicesList.filter((device) => device.category.name === 'xiamilhy')
+        this.totalXiamilhy = qtdXiamilhy.length
+        let qtdOther = this.devicesList.filter((device) => device.category.name !== 'xiamilhy' && device.category.name !== 'motobords')
+        this.totalOther = qtdOther.length
       }
     });
   }
