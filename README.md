@@ -61,6 +61,9 @@
 * Foi utilizado o Bootstrap para tratamento de responsividades e algumas estilizações, como 
 também outras dependencias para visualização de gráficos.
 
+* Análise da Modelagem do banco
+  ![image](https://user-images.githubusercontent.com/61212740/166649131-0868a659-1d0b-44e5-be6c-c4c74b4ee173.png)
+
 * Páginas
   * Página com Login
     * name: admin
