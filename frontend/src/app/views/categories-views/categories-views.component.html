@@ -1,0 +1,61 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2 p-0">
+      <app-nav-bar></app-nav-bar>
+    </div>
+    <div class="col-10">
+      <app-top-bar></app-top-bar>
+      <section class="create-categories mb-3 p-3">
+        <h4 class="mb-5">Create Category</h4>
+        <div class="form-group row mb-4">
+          <div class="col-4">
+            <div class="form-floating mb-3">
+              <input type="text" [(ngModel)]="newCategory.name" class="form-control" id="name" placeholder="Name Category">
+              <label for="name">Name Category</label>
+            </div>
+          </div>
+          <div class="col-8">
+            <button class="btn btn-outline-primary btn-lg btn-padding" (click)="save()">Save</button>
+          </div>
+        </div>
+      </section>
+      <section class="list-categories mt-3 p-3">
+        <h4 class="mb-5">List Categories</h4>
+        <table class="table table-dark table-hover">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Action</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let category of categoriesList">
+            <th scope="row">{{ category.id }}</th>
+            <td>{{ category.name }}</td>
+            <td>
+              <fa-icon class="btn-action" [icon]="faMarker" (click)="openModal(content, category)"></fa-icon>
+              <fa-icon class="btn-action" [icon]="faTrash" (click)="delete(category.id)"></fa-icon>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </section>
+      <ng-template #content let-d="dismiss">
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Edit Category</h4>
+          <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+          <div class="form-floating mb-3">
+            <input type="text" [(ngModel)]="editCategory.name" class="form-control" id="nameEdit" placeholder="Name Edit">
+            <label for="nameEdit">Name Edit</label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-padding" (click)="edit(editCategory)">Edit</button>
+        </div>
+      </ng-template>
+  </div>
+</div>
+

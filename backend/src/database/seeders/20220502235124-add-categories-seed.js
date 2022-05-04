@@ -3,10 +3,10 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
     await queryInterface.bulkInsert('categories', [
-      { name: 'Motorola' },
-      { name: 'Samsung' },
-      { name: 'Iphone' },
-      { name: 'Nokia' }
+      { name: 'motobords' },
+      { name: 'xiamilhy' },
+      { name: 'Aifonioca' },
+      { name: 'Nokliata' }
     ], {});
   },
 

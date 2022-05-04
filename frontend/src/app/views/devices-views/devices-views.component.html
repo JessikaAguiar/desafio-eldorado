@@ -1,0 +1,105 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2 p-0">
+      <app-nav-bar></app-nav-bar>
+    </div>
+    <div class="col-10">
+      <app-top-bar></app-top-bar>
+      <section class="create-device mb-3 p-3">
+        <h4 class="mb-5">Create Device</h4>
+        <div class="form-group row mb-4">
+          <div class="col-3">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" [(ngModel)]="newDevice.name" id="name" placeholder="Name Device">
+              <label for="name">Name Device</label>
+            </div>
+          </div>
+          <div class="col-2">
+            <select class="form-select form-select-lg margin-select" [(ngModel)]="newDevice.category">
+              <option *ngFor="let category of categoriesList" [ngValue]="category">{{ category.name }}</option>
+            </select>
+          </div>
+          <div class="col-2">
+            <div class="form-floating mb-3">
+              <input type="color" class="form-control" id="color" [(ngModel)]="newDevice.color">
+              <label for="color">Color Device</label>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="form-floating mb-3">
+              <input type="number" class="form-control" id="partNumber" placeholder="Part Number Device" [(ngModel)]="newDevice.part_number">
+              <label for="partNumber">Part Number Device</label>
+            </div>
+          </div>
+          <div class="col-2">
+            <button class="btn btn-outline-primary btn-lg btn-padding" (click)="save()">Save</button>
+          </div>
+        </div>
+      </section>
+      <section class="list-device mt-3 p-3">
+        <h4 class="mb-5">List Devices</h4>
+        <table class="table table-dark table-hover">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Category</th>
+            <th scope="col">Color</th>
+            <th scope="col">Part Number</th>
+            <th scope="col">Action</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let device of devicesList">
+            <th scope="row">{{ device.id }}</th>
+            <td>{{ device.name }}</td>
+            <td>{{ device.category.name }}</td>
+            <td>{{ device.color }}</td>
+            <td>{{ device.part_number }}</td>
+            <td>
+              <fa-icon class="btn-action" [icon]="faMarker" (click)="openModal(content, device)"></fa-icon>
+              <fa-icon class="btn-action" [icon]="faTrash" (click)="delete(device.id)"></fa-icon>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </section>
+      <ng-template #content let-d="dismiss">
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Edit Device</h4>
+          <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group row mb-4">
+            <div class="col-12">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" [(ngModel)]="editDevice.name" id="nameEdit" placeholder="Name Device">
+                <label for="nameEdit">Name Edit</label>
+              </div>
+            </div>
+            <div class="col-12">
+              <select class="form-select form-select-lg margin-select" [(ngModel)]="editDevice.category_id">
+                <option *ngFor="let category of categoriesList" [value]="category.id">{{ category.name }}</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <div class="form-floating mb-3">
+                <input type="color" class="form-control" id="colorEdit" [(ngModel)]="editDevice.color">
+                <label for="colorEdit">Color Edit</label>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="partNumberEdit" placeholder="Part Number Device" [(ngModel)]="editDevice.part_number">
+                <label for="partNumberEdit">Part Number Edit</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-padding" (click)="edit(editDevice)">Edit</button>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

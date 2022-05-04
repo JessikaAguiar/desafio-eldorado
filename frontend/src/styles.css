@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #212123 !important;
+  color: #f1f1f1 !important;
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+
+.form-floating {
+  color: #212123;
+}
+
+.margin-select {
+  padding: 13px !important;
+  font-size: 19px !important;
+}
+
+.dark-modal .modal-content {
+  background-color: #292b2c;
+  color: white;
+}
+.dark-modal .close {
+  color: white;
+}

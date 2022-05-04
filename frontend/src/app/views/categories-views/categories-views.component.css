@@ -1,0 +1,21 @@
+.btn-action {
+  font-size: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.btn-action:hover {
+  color: #8d5fdb !important;
+}
+
+.btn-padding {
+  padding: 14px !important;
+  border-color: #8d5fdb;
+  color: #8d5fdb;
+}
+
+.btn-padding:hover {
+  background-color: #8d5fdb;
+  color: #ffffff;
+}

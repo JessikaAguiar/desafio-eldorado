@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <div class="row justify-content-center align-items-center vh-100">
+    <div class="col-4">
+      <h1 class="text-center w-100 p-3">Device Management</h1>
+      <section class="text-center p-5">
+        <p class="h4 mb-4">Sign in</p>
+        <input type="text" id="name" [(ngModel)]="name" pInputText class="form-control mb-4" placeholder="Name" required>
+        <input type="password" id="password" [(ngModel)]="password" class="form-control mb-4" placeholder="Password" required>
+        <button (click)="login()" mdbBtn color="info" block="true" class="btn btn-light my-4" type="submit">Sign in</button>
+      </section>
+    </div>
+  </div>
+</div>

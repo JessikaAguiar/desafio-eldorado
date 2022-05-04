@@ -1,0 +1,60 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2 p-0">
+      <app-nav-bar></app-nav-bar>
+    </div>
+    <div class="col-10">
+      <app-top-bar></app-top-bar>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 d-flex justify-content-around mb-5">
+            <div class="card bg-dark border-info border-2 m-2" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">Device Quantity</h5>
+                <p class="card-text">{{ totalDevices }}</p>
+              </div>
+              <div class="card-body">
+                <a href="#" class="card-link text-decoration-none" [routerLink]="['/devices']">View List</a>
+              </div>
+            </div>
+            <div class="card bg-dark border-info border-2 m-2" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">Cartegory Quantity</h5>
+                <p class="card-text">{{ totalCategories }}</p>
+              </div>
+              <div class="card-body">
+                <a href="#" class="card-link text-decoration-none" [routerLink]="['/categories']">View List</a>
+              </div>
+            </div>
+            <div class="card bg-info border-info m-3" style="width: 15rem;">
+              <div class="card-body">
+                <h5 class="card-title">MotoBords Quantity</h5>
+                <p class="card-text">{{ totalCategories }}</p>
+              </div>
+            </div>
+            <div class="card bg-info border-info m-3" style="width: 15rem;">
+              <div class="card-body">
+                <h5 class="card-title">Xiamilhy Quantity</h5>
+                <p class="card-text">{{ totalCategories }}</p>
+              </div>
+            </div>
+            <div class="card bg-info border-info m-3" style="width: 15rem;">
+              <div class="card-body">
+                <h5 class="card-title">Other Categories Quantity</h5>
+                <p class="card-text">{{ totalCategories }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-5 justify-content-around">
+          <div class="col-3">
+              <graphic-pie></graphic-pie>
+          </div>
+          <div class="col-7">
+            <graphic-bar></graphic-bar>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

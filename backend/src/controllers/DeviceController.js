@@ -29,8 +29,8 @@ class DeviceController {
 
     post = async (request, response) => {
         try {
-            const {name, categoryId, color, partNumber } = request.body
-            const newDevice = new Device(name, parseInt(categoryId), color, parseInt(partNumber))
+            const {name, category_id, color, part_number } = request.body
+            const newDevice = new Device(name, category_id, color, part_number)
             if (!newDevice.valid()) {
                 return response.status(400).json(createResponseErrors([ 'Invalid device' ]))
             }
@@ -44,9 +44,9 @@ class DeviceController {
     put = async (request, response) => {
         try {
             const { id } = request.params
-            const { name, categoryId, color, partNumber } = request.body
+            const { name, category_id, color, part_number } = request.body
 
-            const deviceToEdit = new Device(name, parseInt(categoryId), color, parseInt(partNumber))
+            const deviceToEdit = new Device(name, parseInt(category_id), color, part_number)
 
             if (!deviceToEdit.valid()) {
                 return response.status(400).json(createResponseErrors([ 'Invalid device' ]))

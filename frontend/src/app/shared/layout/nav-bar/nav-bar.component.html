@@ -1,0 +1,18 @@
+<aside class="d-flex flex-column pt-4 pl-5 nav-style vh-100">
+  <section class="d-flex flex-column">
+    <div class="title-nav">
+      <fa-icon class="logo" [icon]="faMicrochip"></fa-icon>
+      <p>Device Management</p>
+    </div>
+    <a class="m-3 link link-active" [routerLink]="['/dashboard']">Dashboard</a>
+    <a class="m-3 link" [routerLink]="['/devices']">
+      <fa-icon class="link-ml" [icon]="faGamepad"></fa-icon>
+      Devices
+    </a>
+    <a class="m-3 link" [routerLink]="['/categories']">
+      <fa-icon class="link-ml" [icon]="faList"></fa-icon>
+      Categories
+    </a>
+  </section>
+  <button (click)="logout()" class="m-3 p-2 btn btn-light">Logout</button>
+</aside>
