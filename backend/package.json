@@ -4,7 +4,8 @@
   "description": "gerenciamento de dispositivos",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "db:migrate": "npx sequelize-cli db:migrate",
     "dev": "nodemon -r dotenv/config src/server.js",
     "testing": "set NODE_ENV=test && nodemon src/server.js",
     "test": "jest",

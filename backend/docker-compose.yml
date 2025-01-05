@@ -1,0 +1,35 @@
+services:
+  db:
+    image: mysql:8
+    container_name: mysql_container
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3001:3001'
+    environment:
+      DB_HOST: ${DB_HOST}
+      DB_USER: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_DATABASE: ${DB_DATABASE}
+      DB_DIALECT: ${DB_DIALECT}
+      JWT_SECRET: ${JWT_SECRET}
+      PORT: ${PORT}
+    depends_on:
+      - db
+    command: sh -c "./wait-for-it.sh db:3306 -- npm start"
+
+volumes:
+  db_data:
